@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NashZone | Height Study</title><link rel="stylesheet" href="./style.css"></head>
+<body>
+<header><a class="brand" href="./">NashZone<span> / Height Study</span></a><div class="header-end"><span class="status">Geometry demo</span><button id="export" title="Download analysis JSON" aria-label="Download analysis JSON"><i data-lucide="download"></i></button></div></header>
+<main>
+<aside>
+<div class="site-label">CASE 001 · NASHVILLE</div><h1>3821 Green Hills<br>Village Drive</h1><p class="parcel">Parcel 11714015900 · SCR / Green Hills UDO</p>
+<form id="parameters"><label for="min-area">Minimum top plate <span>sq ft</span></label><input id="min-area" type="number" min="1" step="any" value="50000" required><label for="floor-height">Upper-floor height <span>ft</span></label><input id="floor-height" type="number" min="0.1" max="100" step="0.1" value="10" required><div class="fixed"><span>Build-to offset</span><strong>0 ft</strong><span>Baseline height</span><strong>48 ft</strong><span>Other setbacks</span><strong>Excluded</strong><span>Roads</span><strong>Deducted</strong></div><button class="primary" type="submit"><i data-lucide="calculator"></i>Calculate</button><p id="error" role="alert"></p></form>
+<div class="source-note"><i data-lucide="scan-line"></i><div><strong>Approximate PDF geometry</strong><p id="scale-note"></p></div></div>
+<details><summary>Geometry &amp; rule assumptions</summary><p>48 ft baseline; each added floor retreats 10 ft. F3 follows two road-edge segments. The joint case intersects both frontage constraints.</p><p>Road exclusion follows the gray PDF outline. No other setbacks. Minimum area applies to a single connected plate. Geometric feasibility does not establish structural feasibility.</p><p>Bonus adequacy and remaining code constraints are not evaluated. FAR exemptions remain separate from bonus.</p><p>Source: Green Hills UDO pp. 24–25, 49–50; user-supplied dimension PDF. No surveyed bearings.</p></details>
+</aside>
+<section class="workspace">
+<nav id="scenarios" aria-label="Frontage scenarios"></nav>
+<div class="metrics"><div><span>Geometric height</span><strong id="height">—</strong></div><div><span>Added floors above 48 ft</span><strong id="floors">—</strong></div><div><span>Highest connected plate</span><strong id="plate">—</strong></div></div>
+<div class="view-toolbar"><div class="segmented" id="modes"><button data-mode="plane" aria-pressed="true">Height surface</button><button data-mode="steps" aria-pressed="false">Stepped envelope</button></div><div class="tools"><button id="reset-camera" title="Reset view" aria-label="Reset view"><i data-lucide="rotate-ccw"></i></button><button id="plan-camera" title="Plan view" aria-label="Plan view"><i data-lucide="map"></i></button></div></div>
+<div id="scene"><div class="scene-note">CONDITIONAL GEOMETRIC ENVELOPE</div><div class="legend"><span class="teal"></span>Envelope <span class="yellow"></span>Frontage <span class="gray"></span>Road exclusion</div></div>
+<div class="level-controls"><label for="level">Section level <strong id="level-label"></strong></label><input id="level" type="range" min="0" max="1" value="0"><span id="section-area"></span></div>
+<div class="lower"><div class="plan"><h2>Selected plate / plan</h2><svg id="plan" role="img" aria-label="Parcel, road exclusions, frontages and selected floor plate"></svg></div><div class="audit"><h2>Threshold check</h2><div id="threshold"></div><table><thead><tr><th>Scenario</th><th>Added floors</th><th>Height</th></tr></thead><tbody id="comparison"></tbody></table><p class="legal">Geometric ceiling only · bonus not evaluated</p></div></div>
+<details class="calibration"><summary>Dimension calibration</summary><table><thead><tr><th>Label (ft)</th><th>Model (ft)</th><th>Difference (ft)</th></tr></thead><tbody id="calibration"></tbody></table></details>
+</section></main><script type="module" src="./main.mjs"></script></body></html>

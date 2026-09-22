@@ -1,0 +1,14 @@
+{
+  "jurisdiction_id": "us-tn-nashville-davidson",
+  "status": "draft_unverified",
+  "global_overlay_precedence": false,
+  "sources": [
+    {"id": "zoning-code", "url": "https://library.municode.com/tn/metro_government_of_nashville_and_davidson_county/codes/code_of_ordinances?nodeId=CD_TIT17ZO_CH17.08ZODILAUS", "scope": "Starting link to Chapter 17.08; additional chapters required", "verification_status": "pending"},
+    {"id": "parcel-viewer", "url": "https://maps.nashville.gov/ParcelViewer/", "verification_status": "pending_parcel_lookup"},
+    {"id": "green-hills-udo", "local_path": "17-GH_UDOupdated2015.pdf", "effective_date": null, "verification_status": "pending_version_and_applicability_review"},
+    {"id": "parcel-ordinance-2007", "url": "https://legisarchive.nashville.gov/mc/ordinances/term_2003_2007/bl2007_1360.htm", "verification_status": "historical_enacted_text_checked_later_changes_pending", "effective_date": "2007-03-23", "scope": "Section 1 names Map 117-14 Parcel 159 and requires all UDO provisions; Section 3 PUD wording requires clarification"},
+    {"id": "official-udo-link", "url": "https://www.nashville.gov/sites/default/files/2025-10/11-GH-UDOupdated2015.pdf?ct=1759507806", "verification_status": "official_link_found_byte_equivalence_not_checked", "effective_date": null}
+  ],
+  "priority_topics": ["use", "height", "building_area", "bonus", "parking", "frontage", "streets", "public_space", "facade"],
+  "rule_resolution": "Apply only evidence-supported scope and explicit rule relationships; escalate unresolved conflicts."
+}

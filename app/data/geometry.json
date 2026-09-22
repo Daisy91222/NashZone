@@ -1,0 +1,253 @@
+{
+  "source": "parcel dimension.pdf",
+  "sha256": "4ac8cd4f09309efbbd1ff2f585e7ad5d9d3e219e7025e86c65b037f981584273",
+  "units": "ft",
+  "quality": "approximate_vector_diagram",
+  "scale_ft_per_pdf_unit": 1.4146587414910534,
+  "calibration": [
+    {
+      "label_ft": 52.2,
+      "fitted_ft": 58.06803452107315,
+      "residual_ft": 5.868034521073149
+    },
+    {
+      "label_ft": 640,
+      "fitted_ft": 637.3647612767286,
+      "residual_ft": -2.6352387232714136
+    },
+    {
+      "label_ft": 357.5,
+      "fitted_ft": 345.8228600763691,
+      "residual_ft": -11.677139923630875
+    },
+    {
+      "label_ft": 176.6,
+      "fitted_ft": 185.45098784365868,
+      "residual_ft": 8.850987843658686
+    },
+    {
+      "label_ft": 20,
+      "fitted_ft": 19.169223853053214,
+      "residual_ft": -0.8307761469467856
+    },
+    {
+      "label_ft": 211.7,
+      "fitted_ft": 206.40462161382658,
+      "residual_ft": -5.295378386173411
+    },
+    {
+      "label_ft": 371.4,
+      "fitted_ft": 385.1765325339394,
+      "residual_ft": 13.776532533939417
+    },
+    {
+      "label_ft": 225.9,
+      "fitted_ft": 223.83679781559485,
+      "residual_ft": -2.0632021844051565
+    }
+  ],
+  "parcel": [
+    [
+      22.586441,
+      53.49532
+    ],
+    [
+      0.0,
+      0.0
+    ],
+    [
+      633.624236,
+      -68.950467
+    ],
+    [
+      776.278423,
+      246.078473
+    ],
+    [
+      605.093398,
+      317.406982
+    ],
+    [
+      595.582647,
+      300.763522
+    ],
+    [
+      404.187808,
+      378.035012
+    ],
+    [
+      244.89016,
+      27.342524
+    ],
+    [
+      22.586441,
+      53.49532
+    ]
+  ],
+  "road": [
+    [
+      880.891871,
+      373.279495
+    ],
+    [
+      864.248411,
+      368.524827
+    ],
+    [
+      828.584864,
+      345.936971
+    ],
+    [
+      800.054027,
+      292.44165
+    ],
+    [
+      657.399839,
+      -38.041022
+    ],
+    [
+      633.62367,
+      -58.250837
+    ],
+    [
+      556.35218,
+      -60.628878
+    ],
+    [
+      456.494249,
+      -36.852709
+    ],
+    [
+      148.598018,
+      84.40335
+    ],
+    [
+      42.613199,
+      140.57662
+    ],
+    [
+      314.182409,
+      751.813881
+    ],
+    [
+      266.134939,
+      718.584962
+    ],
+    [
+      -153.201034,
+      -225.237155
+    ],
+    [
+      -144.186829,
+      -279.865617
+    ],
+    [
+      32.733223,
+      118.339599
+    ],
+    [
+      130.766244,
+      67.761305
+    ],
+    [
+      446.983498,
+      -54.684482
+    ],
+    [
+      540.898448,
+      -79.648965
+    ],
+    [
+      662.154507,
+      -84.403633
+    ],
+    [
+      841.66197,
+      325.72857
+    ],
+    [
+      880.891871,
+      345.936971
+    ],
+    [
+      928.442795,
+      347.126699
+    ],
+    [
+      929.632523,
+      372.091181
+    ],
+    [
+      880.891871,
+      373.279495
+    ]
+  ],
+  "frontages": {
+    "F1": {
+      "name": "Cleghorn",
+      "lines": [
+        [
+          [
+            22.586441,
+            53.49532
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ]
+      ]
+    },
+    "F2": {
+      "name": "Right internal road",
+      "lines": [
+        [
+          [
+            633.624236,
+            -68.950467
+          ],
+          [
+            776.278423,
+            246.078473
+          ]
+        ]
+      ]
+    },
+    "F3": {
+      "name": "Middle internal road",
+      "lines": [
+        [
+          [
+            148.598018,
+            84.40335
+          ],
+          [
+            456.494249,
+            -36.852709
+          ]
+        ],
+        [
+          [
+            456.494249,
+            -36.852709
+          ],
+          [
+            556.35218,
+            -60.628878
+          ]
+        ]
+      ]
+    }
+  },
+  "building_side_point": [
+    532.743223,
+    158.108768
+  ],
+  "assumptions": [
+    "Gray closed road outline treated as an exclusion polygon; not a verified ROW or easement.",
+    "F3 uses two connected straight segments of the upper road edge; extended inward half-planes intersect to preserve its convex bend.",
+    "F1 and F2 use user-selected parcel edges; road subtraction precedes all scenario clipping.",
+    "No side or rear setbacks. Zero build-to offset. 48 ft baseline. Bonus adequacy not evaluated.",
+    "Highest plate must be connected; area test uses the largest connected component."
+  ]
+}

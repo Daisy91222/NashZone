@@ -1,0 +1,21 @@
+{
+  "name": "nashzone",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node --test --test-isolation=none tests/*.test.mjs"
+  },
+  "dependencies": {
+    "lucide": "^0.468.0",
+    "polyclip-ts": "^0.16.8",
+    "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "playwright": "^1.55.0",
+    "vite": "^8.3.0"
+  }
+}

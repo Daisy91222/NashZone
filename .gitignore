@@ -1,0 +1,14 @@
+.env
+.env.*
+!.env.example
+__pycache__/
+.venv/
+.pytest_cache/
+node_modules/
+tmp/
+data/local/
+# Local source document: link publicly after checking redistribution terms.
+/17-GH_UDOupdated2015.pdf
+/parcel dimension.pdf
+/parcel.ai
+dist/

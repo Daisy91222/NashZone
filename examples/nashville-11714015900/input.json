@@ -1,0 +1,22 @@
+{
+  "schema_version": "0.1.0",
+  "jurisdiction_id": "us-tn-nashville-davidson",
+  "parcel_id": "11714015900",
+  "mode": "baseline",
+  "interested_uses": ["retail", "office", "multifamily"],
+  "scenario": null,
+  "sources": [{"id": "user-parcel-record", "kind": "user_transcription", "title": "User-supplied Parcel Viewer record and prior zoning statements", "url": "https://maps.nashville.gov/ParcelViewer/", "captured_at": null, "effective_date": null}],
+  "facts": [
+    {"id": "address", "value": "3821 GREEN HILLS VILLAGE DR NASHVILLE, TN 37215", "unit": null, "source_id": "user-parcel-record", "status": "user_provided"},
+    {"id": "base_zoning", "value": "SCR", "unit": null, "source_id": "user-parcel-record", "status": "user_provided"},
+    {"id": "overlay", "value": "Green Hills UDO", "unit": null, "source_id": "user-parcel-record", "status": "user_provided"},
+    {"id": "site_area_reported", "value": 3.79, "unit": "acre", "source_id": "user-parcel-record", "status": "user_provided"},
+    {"id": "square_footage_unclassified", "value": 166746.557, "unit": "sq_ft", "source_id": "user-parcel-record", "status": "unresolved", "note": "Original field: Square Footage. Meaning unverified; do not assign to building area."},
+    {"id": "existing_land_use", "value": "OFFICE BLDG (3 OR MORE STORIES)", "unit": null, "source_id": "user-parcel-record", "status": "user_provided"},
+    {"id": "legal_description", "value": "LOT 1 GREEN HILLS COMMONS 1ST REV", "unit": null, "source_id": "user-parcel-record", "status": "user_provided"},
+    {"id": "parcel_instrument", "value": "PL-00008250 0000761", "unit": null, "source_id": "user-parcel-record", "status": "user_provided"},
+    {"id": "assessment_date", "value": "2025-01-01", "unit": null, "source_id": "user-parcel-record", "status": "user_provided", "note": "Not the retrieval date."}
+  ],
+  "derived_checks": [{"id": "acre_conversion", "formula": "3.79 * 43560", "result": 165092.4, "unit": "sq_ft", "input_fact_ids": ["site_area_reported"], "status": "arithmetic_only_not_regulatory_area"}],
+  "open_questions": ["Verify current zoning and overlay identity", "Verify parcel-specific amendments", "Confirm meaning of Square Footage and regulatory lot-area basis", "Confirm frontage, parcel geometry and access", "Verify current code and UDO source versions"]
+}

@@ -1,0 +1,31 @@
+{
+  "parcel_id": "11714015900",
+  "source": {"file": "parcel dimension.pdf", "physical_page": 1, "reviewed_on": "2026-09-22", "status": "user_supplied_diagram_not_verified_survey"},
+  "orientation": "Diagram-relative only; no north arrow or bearings supplied",
+  "frontage_annotation": {"source": "User yellow-marked image and accompanying confirmation, 2026-09-22", "original_image": "C:/Users/10133/AppData/Local/Temp/codex-clipboard-53e6c993-4d36-4954-9cea-d5f9c25f2dc6.png", "status": "user_confirmed_analysis_selection", "note": "User previously analyzed all three highlighted frontages. Internal-road status confirmed; recorded easement and legal ROW not supplied."},
+  "segments": [
+    {"id": "S1", "location": "short left end near Cleghorn Ave", "length_ft": 52.2},
+    {"id": "S2", "location": "upper edge of narrow access arm", "length_ft": 225.9},
+    {"id": "S3", "location": "left edge of main body", "length_ft": 371.4},
+    {"id": "S4", "location": "upper-left edge", "length_ft": 211.7},
+    {"id": "S5", "location": "upper boundary jog", "length_ft": 20},
+    {"id": "S6", "location": "upper-right edge", "length_ft": 176.6},
+    {"id": "S7", "location": "right edge along internal road", "length_ft": 357.5},
+    {"id": "S8", "location": "long lower edge", "length_ft": 640}
+  ],
+  "user_review_decisions": {
+    "parcel_specific_ordinance_first": true,
+    "far_exemptions_and_bonus_separate_until_user_review": true,
+    "maximum_area_output": false,
+    "road_category": "other",
+    "road_category_status": "user_classification_not_official_determination",
+    "road_description": "Two longer internal roads and one short external road contact"
+  },
+  "frontage_candidates": [
+    {"id": "F1", "road": "Cleghorn Ave", "type": "external_user_reported", "candidate_segment_ids": ["S1"], "diagram_contact_length_ft": 52.2, "legal_frontage_length_ft": null, "height_ft": null},
+    {"id": "F2", "road": "Green Hills Village Dr, right side", "type": "internal_user_reported", "candidate_segment_ids": ["S7"], "diagram_contact_length_ft": 357.5, "legal_frontage_length_ft": null, "height_ft": null},
+    {"id": "F3", "road": "Green Hills Village Dr, lower internal road", "type": "internal_user_confirmed", "candidate_segment_ids": [], "diagram_contact_length_ft": null, "legal_frontage_length_ft": null, "height_ft": null, "note": "Use yellow-marked road-facing line from main-body lower-left notch toward lower road bend as selected analysis frontage. Do not substitute entire 640-ft parcel boundary. Marked line has no independent dimension."}
+  ],
+  "geometry_limits": ["No bearings, coordinates or explicit right-of-way/easement boundaries", "Segment lengths alone do not uniquely define polygon", "Three analysis frontages confirmed by user; legal recognition and road rights remain unverified", "No building footprint, floor heights or eligible bonus allocation"],
+  "calculation_status": "Dimensions transcribed; no entitlement height, floor count or maximum area calculated"
+}
