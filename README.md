@@ -1,5 +1,14 @@
 # NashZone
 
+## Independent Workspace
+
+The original Nashville demo is preserved. A separate reusable workspace now lives
+at [`/workspace/`](https://daisy91222.github.io/NashZone/workspace/) (available after
+the next Pages deployment). It accepts portable project JSON, source text,
+reviewed rules and custom frontage scenarios, and produces height-slice plans and
+an exportable review record. See [workspace scope and contract](docs/reusable-workspace.md).
+Local entry: `http://127.0.0.1:4317/workspace/` after `npm run dev`.
+
 **From planning regulations to reviewable development scenarios.**
 
 NashZone is a pre-application intelligence agent project for planners, developers, and property owners exploring what a site could become. It combines source-linked regulatory research with repeatable spatial calculations, helping clients investigate development options before committing to a building program.

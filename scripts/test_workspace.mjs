@@ -1,0 +1,31 @@
+import {chromium} from 'playwright';
+import assert from 'node:assert/strict';
+import {mkdir} from 'node:fs/promises';
+await mkdir('tmp',{recursive:true});
+const browser=await chromium.launch({channel:'msedge',headless:true});
+try {
+  const page=await browser.newPage({viewport:{width:1360,height:1000}}),errors=[];
+  page.on('pageerror',e=>errors.push(e.message));
+  await page.goto(process.env.TEST_URL??'http://127.0.0.1:4321/workspace/');
+  await page.locator('#calculate').click();
+  assert.match(await page.locator('#status').innerText(),/reviewed/);
+  for(const checkbox of await page.locator('#rules input').all())await checkbox.check();
+  await page.locator('#calculate').click();
+  assert.match(await page.locator('#result').innerText(),/190.00/);
+  assert.ok(await page.locator('#plan path').count()>1);
+  await page.locator('#level').fill('10');
+  assert.match(await page.locator('#slice').innerText(),/Step 10/);
+  await page.locator('#save').click();await page.reload();
+  assert.equal(await page.locator('#rules input:checked').count(),3);
+  await page.locator('#calculate').click();
+  const dl=page.waitForEvent('download');await page.locator('#report').click();assert.equal((await dl).suggestedFilename(),'review-memo.json');
+  await page.screenshot({path:'tmp/workspace-desktop.png',fullPage:true});
+  await page.setViewportSize({width:390,height:844});
+  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+  await page.screenshot({path:'tmp/workspace-mobile.png',fullPage:true});
+  await page.locator('#editor').fill('{');await page.locator('#apply').click();
+  assert.ok(await page.locator('#calculate').isDisabled());
+  await page.locator('#new').click();assert.equal(await page.locator('#rules input:checked').count(),0);
+  assert.deepEqual(errors,[]);
+  console.log('PASS workspace review gate, calculation, slicing, persistence, memo, invalid JSON and mobile layout');
+} finally {await browser.close();}

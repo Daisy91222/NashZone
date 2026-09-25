@@ -1,0 +1,11 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {example} from '../core/example.mjs';
+import {calculate,resolveRules,validate} from '../core/project.mjs';
+const fixture=()=>{const p=example();p.rules.forEach(r=>r.status='reviewed');return p;};
+test('independent rectangle produces analytic threshold and failing next level',()=>{const p=fixture(),r=calculate(p,p.scenarios[0],p.parameters);assert.equal(r.best.step,16);assert.equal(r.best.height,190);assert.equal(r.best.area,12000);assert.equal(r.levels.at(-1).area,9000);});
+test('combined frontages intersect constraints',()=>{const p=fixture(),r=calculate(p,p.scenarios[1],p.parameters);assert.ok(r.best.step<16);assert.ok(r.levels.at(-1).area<10000);});
+test('review and conflicting rules block calculation',()=>{assert.throws(()=>resolveRules(example()),/reviewed/);const p=fixture();p.rules.push({...p.rules[0]});assert.throws(()=>resolveRules(p),/exactly one/);});
+test('exclusions are deducted and disconnected areas not summed',()=>{const p=fixture();p.exclusions=[[[140,0],[160,0],[160,200],[140,200],[140,0]]];const r=calculate(p,p.scenarios[0],{minArea:30000,floorHeight:10});assert.equal(r.netArea,56000);assert.equal(r.best,null);});
+test('metric coordinates and rule values preserve physical result',()=>{const p=fixture(),scale=.3048;p.units='m';p.parcel=p.parcel.map(v=>v.map(x=>x*scale));p.frontages=p.frontages.map(f=>({...f,line:f.line.map(v=>v.map(x=>x*scale)),inside:f.inside.map(x=>x*scale)}));p.rules.forEach(r=>r.value*=scale);const r=calculate(p,p.scenarios[0],{minArea:10000*scale**2,floorHeight:10*scale});assert.equal(r.best.step,16);assert.ok(Math.abs(r.best.height-190*scale)<1e-8);});
+test('unsupported coordinates and degenerate frontage rejected',()=>{const p=fixture();p.units='degrees';assert.ok(validate(p).length);p.units='ft';p.frontages[0].line[1]=p.frontages[0].line[0];assert.ok(validate(p).length);});
