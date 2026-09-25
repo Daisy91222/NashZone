@@ -9,6 +9,10 @@ Repository: https://github.com/Daisy91222/NashZone
 
 If the first run occurred before Pages was enabled, enable it and re-run the failed workflow, or choose Actions > Deploy NashZone to GitHub Pages > Run workflow (main). Future pushes to main redeploy automatically.
 
+## Show the site on the repository home page
+
+Pages deployment and the repository Website field are separate settings. On the repository Code page, click the gear next to About, set Website to `https://daisy91222.github.io/NashZone/` (or select "Use your GitHub Pages website" if offered), and save. A README commit cannot change this repository metadata. On 2026-09-25 the public repository API reported `has_pages: true` but an empty `homepage` field. The README also provides a direct live-demo link and clickable application screenshots.
+
 The workflow runs npm ci, numerical tests and the production build, then uploads only dist. No API key, paid backend or manually committed build output is needed for this geometry demo. Original PDF/AI inputs, dependencies, local extraction output and temporary screenshots are ignored. Public source includes derived parcel geometry, source hashes and project documentation.
 
 ## Local checks
